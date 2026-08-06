@@ -30,6 +30,14 @@ Peça as cinco de uma vez, em linguagem comum, deixando claro que resposta curta
 
 Se ela travar numa pergunta, não insista: marque lacuna e siga. Se ela responder as cinco em três linhas, trabalhe com as três linhas — o protótipo fica menor e mais honesto.
 
+### Modo ao vivo (demonstração com plateia)
+
+Se está rodando na frente de gente, com um voluntário: peça só as perguntas **2, 4 e 5**, aceite
+respostas de uma linha e **vá direto pro passo 4 (diagnóstico)**. Mostre os protótipos em versão curta —
+5 linhas cada, lacunas incluídas. O momento que convence não é o documento cheio: é a plateia vendo a
+frente ser escolhida e o "não faça ainda" bater na coisa que cada um ia fazer hoje à noite. O documento
+completo sai depois, na máquina da pessoa.
+
 ## 2. Protótipo comercial — como o dinheiro entra
 
 Monte e mostre (nada gravado ainda):
