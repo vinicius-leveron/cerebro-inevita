@@ -1,5 +1,45 @@
 # Mudanças do cérebro INEVITA
 
+## v1.17.0 — 2026-08-06 · “e agora, como isso vira dinheiro?”
+
+O Dia 1 respondeu *o que é contexto*. Esta versão responde a pergunta do Dia 2:
+*"como isso me potencializa, como isso me dá resultado, como sobe dinheiro para a empresa"*
+([[dia1-cerebro-da-empresa-transcricao]] @ 02:27).
+
+- **Skill `/prototipar` nova:** uma rodada, quatro saídas — **protótipo comercial**
+  (quem compra, o que compra, o funil real, onde morre, os 4 artefatos do comercial, objeções),
+  **protótipo de entrega** (entregáveis, etapas com dono e gate, a régua de "bom", o gargalo,
+  o melhor trabalho já feito), **diagnóstico da frente** (decisão · venda · entrega — uma só,
+  com o não-faça-ainda) e **o loop** (fonte → tratamento → trabalho → medida → memória, com o
+  primeiro eval escrito antes do dado). Lei zero: nada de invenção — o que a pessoa não disse
+  vira `(não consta — você preenche)`, porque a lacuna marcada é o mapa do que capturar primeiro.
+- **`meu-negocio/entrega.md` novo:** a área perene que faltava. O cofre tinha oferta, ICP e
+  posicionamento — o lado comercial — e nada para o lado da entrega, que é onde mora a régua
+  de "bom" e o gargalo que só o dono resolve.
+- **Skill `/moldar` nova:** skill de fora é execução emprestada — sabe *como fazer*, não sabe
+  *do teu negócio*. A `/moldar` descobre qual arquivo de contexto aquela skill lê, preenche com
+  o que já existe em `meu-negocio/`, pergunta só o buraco (a régua e os **rejeitados**), escreve
+  onde a skill procura e **valida rodando**, não lendo. O arquivo de contexto é projeção do cofre,
+  nunca segunda fonte.
+- **Catálogo de 34 skills de fora** em `comunidade/inevita/skills-disponiveis/_CATALOGO.md`:
+  7 blocos (vault · design · disciplina de código · segurança · token · distribuição · criar as
+  próprias), cada um declarando o arquivo de contexto que precisa existir e de qual nota do cérebro
+  ele nasce. Curadoria da INEVITA verificada em 06/08 — **não vêm instaladas e não foram auditadas
+  por nós**; os três avisos (compressão cobra qualidade, memória de sessão ≠ memória de decisão,
+  estrelas de julho) ficam no catálogo, não na nota de rodapé.
+- **Cliente com entrega recorrente vira pasta, não página:** `gente/<apelido>/` ganhou forma —
+  `contexto.md` (quem é, o que comprou, o que prometemos), `entregas/` (o que já foi feito) e
+  **`julgamentos.md`** (o que ele aprovou, o que rejeitou e **por quê**, com citação literal).
+  O `julgamentos.md` é o arquivo pelo qual a pasta existe: contexto envelhece e entrega é histórico,
+  mas julgamento acumulado fica mais valioso a cada mês — *"esse julgamento não está sendo acumulado.
+  E por conta disso, vocês não conseguem olhar para coisas novas"* (@ 00:20). Apelido é papel,
+  nunca nome real: PII continua sendo regra 5.
+- **`meu-negocio/repete.md` novo — a escada entre atender e produtizar.** O que apareceu em 2+ clientes
+  entra com as duas origens citadas; na **3ª vez** sai de lá e vira régua (`entrega.md`), linha de
+  `oferta.md` ou sistema. 1× não sobe — caso isolado promovido cedo vira regra errada pra todo mundo.
+  A varredura é do `/reindex`; padrão parado 90 dias desce como `status: superado`.
+- Glossário: entram **Arquivo de contexto**, **Protótipo**, **Frente**, **Julgamento** e **Repete**.
+
 ## v1.16.0 — 2026-08-06 · “a régua de refino — quanto tratar deixa de ser dúvida”
 
 - **`FONTES.md` novo:** a régua de tratamento de fontes. Os 5 níveis de refino

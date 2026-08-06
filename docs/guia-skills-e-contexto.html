@@ -1,0 +1,570 @@
+<title>Skills e contexto — guia da turma fundadora</title>
+<style>
+  :root {
+    --ground: #EFF1F3;
+    --surface: #FFFFFF;
+    --surface-2: #E6E9EC;
+    --ink: #171A1F;
+    --ink-soft: #565E69;
+    --ink-faint: #808894;
+    --rule: #D3D8DD;
+    --accent: #B06B14;
+    --accent-soft: #F6EADA;
+    --teal: #2F6068;
+    --teal-soft: #E1ECEC;
+    --warn: #9A3F2E;
+    --warn-soft: #F7E7E3;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, "JetBrains Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --measure: 68ch;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #131519;
+      --surface: #1A1D22;
+      --surface-2: #22262C;
+      --ink: #E7E9EC;
+      --ink-soft: #A2AAB5;
+      --ink-faint: #79818C;
+      --rule: #2E333A;
+      --accent: #DC9C4C;
+      --accent-soft: #2A2118;
+      --teal: #7FB2B9;
+      --teal-soft: #172324;
+      --warn: #D98570;
+      --warn-soft: #2A1B17;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #131519;
+    --surface: #1A1D22;
+    --surface-2: #22262C;
+    --ink: #E7E9EC;
+    --ink-soft: #A2AAB5;
+    --ink-faint: #79818C;
+    --rule: #2E333A;
+    --accent: #DC9C4C;
+    --accent-soft: #2A2118;
+    --teal: #7FB2B9;
+    --teal-soft: #172324;
+    --warn: #D98570;
+    --warn-soft: #2A1B17;
+  }
+  :root[data-theme="light"] {
+    --ground: #EFF1F3;
+    --surface: #FFFFFF;
+    --surface-2: #E6E9EC;
+    --ink: #171A1F;
+    --ink-soft: #565E69;
+    --ink-faint: #808894;
+    --rule: #D3D8DD;
+    --accent: #B06B14;
+    --accent-soft: #F6EADA;
+    --teal: #2F6068;
+    --teal-soft: #E1ECEC;
+    --warn: #9A3F2E;
+    --warn-soft: #F7E7E3;
+  }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: clamp(28px, 5vw, 72px) clamp(18px, 4vw, 40px) 96px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(40px, 6vw, 72px);
+  }
+  section { display: flex; flex-direction: column; gap: 20px; }
+  p { max-width: var(--measure); }
+  a { color: var(--accent); }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  h1 {
+    font-family: var(--mono);
+    font-size: clamp(30px, 5.5vw, 50px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    text-wrap: balance;
+    margin: 0;
+  }
+  h2 {
+    font-family: var(--mono);
+    font-size: clamp(19px, 2.4vw, 23px);
+    letter-spacing: -0.01em;
+    font-weight: 600;
+    margin: 0;
+    text-wrap: balance;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--ink);
+  }
+  h3 {
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+  .lede { font-size: clamp(18px, 2.2vw, 21px); line-height: 1.5; color: var(--ink-soft); max-width: 60ch; }
+
+  header.masthead { display: flex; flex-direction: column; gap: 18px; }
+  .meta {
+    display: flex; flex-wrap: wrap; gap: 8px 20px;
+    font-family: var(--mono); font-size: 12.5px; color: var(--ink-faint);
+    padding-top: 14px; border-top: 1px solid var(--rule);
+  }
+
+  .thesis {
+    background: var(--surface);
+    border-left: 4px solid var(--accent);
+    padding: clamp(20px, 3vw, 30px);
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .thesis strong { color: var(--accent); }
+  blockquote {
+    font-family: var(--serif);
+    font-size: clamp(17px, 2vw, 20px);
+    line-height: 1.5;
+    margin: 0;
+    color: var(--ink);
+    max-width: 58ch;
+  }
+  blockquote cite {
+    display: block; margin-top: 10px;
+    font-family: var(--mono); font-style: normal;
+    font-size: 12px; letter-spacing: 0.06em; color: var(--ink-faint);
+  }
+
+  code, .cmd {
+    font-family: var(--mono);
+    font-size: 0.88em;
+    background: var(--surface-2);
+    padding: 2px 6px;
+    border-radius: 3px;
+    word-break: break-word;
+  }
+  .cmd { color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+
+  .grid-2 { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: clamp(18px, 2.4vw, 26px);
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .card p { font-size: 15.5px; color: var(--ink-soft); max-width: none; margin: 0; }
+  .card ul { margin: 0; padding-left: 18px; font-size: 15.5px; color: var(--ink-soft); display: flex; flex-direction: column; gap: 6px; }
+  .card ul strong { color: var(--ink); }
+
+  .out {
+    display: grid; grid-template-columns: auto 1fr; gap: 6px 12px;
+    font-size: 15px; align-items: baseline;
+  }
+  .out dt { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); }
+  .out dd { margin: 0; color: var(--ink-soft); }
+
+  ol.path { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; counter-reset: step; }
+  ol.path li {
+    counter-increment: step;
+    display: grid; grid-template-columns: 40px 1fr; gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-bottom: none;
+    padding: 16px clamp(14px, 2vw, 22px);
+    align-items: start;
+  }
+  ol.path li:last-child { border-bottom: 1px solid var(--rule); }
+  ol.path li::before {
+    content: counter(step);
+    font-family: var(--mono); font-size: 13px; font-weight: 600;
+    color: var(--surface); background: var(--teal);
+    width: 26px; height: 26px; display: grid; place-items: center;
+  }
+  ol.path p { margin: 0; font-size: 15.5px; color: var(--ink-soft); }
+  ol.path b { color: var(--ink); font-weight: 600; }
+
+  .blocks { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+  .block {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--teal);
+    padding: 20px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .block.is-weak { border-top-color: var(--ink-faint); }
+  .block-head { display: flex; flex-direction: column; gap: 4px; }
+  .block-head .count { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); letter-spacing: 0.06em; }
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .chip {
+    font-family: var(--mono); font-size: 12px;
+    background: var(--surface-2); color: var(--ink-soft);
+    padding: 3px 7px; border-radius: 3px;
+  }
+  .ctx {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    padding: 12px 14px;
+    display: flex; flex-direction: column; gap: 6px;
+    font-size: 14.5px;
+  }
+  .ctx .label { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 700; }
+  .ctx code { background: transparent; padding: 0; color: var(--ink); font-weight: 600; }
+  .from { font-size: 14px; color: var(--ink-faint); }
+  .from code { font-size: 12.5px; }
+  .src { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); word-break: break-word; }
+
+  .warns { display: flex; flex-direction: column; gap: 14px; }
+  .warn {
+    background: var(--warn-soft);
+    border-left: 4px solid var(--warn);
+    padding: 16px 18px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .warn h3 { color: var(--warn); }
+  .warn p { font-size: 15.5px; color: var(--ink-soft); max-width: none; margin: 0; }
+
+  .qa { display: flex; flex-direction: column; gap: 14px; }
+  .q {
+    border: 1px solid var(--rule); background: var(--surface);
+    padding: 18px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .q .ask { font-family: var(--serif); font-size: 18px; line-height: 1.45; }
+  .q .why { font-size: 14.5px; color: var(--ink-soft); }
+
+  table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  .scroll { overflow-x: auto; border: 1px solid var(--rule); background: var(--surface); }
+  th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  td:first-child { white-space: nowrap; }
+
+  .tree-row { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: start; }
+  pre.tree {
+    margin: 0; overflow-x: auto;
+    background: var(--surface); border: 1px solid var(--rule);
+    padding: clamp(16px, 2.4vw, 24px);
+    font-family: var(--mono); font-size: 13px; line-height: 1.85;
+    color: var(--ink);
+  }
+  pre.tree .dim { color: var(--ink-faint); }
+  pre.tree .hot { color: var(--accent); font-weight: 700; }
+  aside.note {
+    background: var(--teal-soft); border-left: 4px solid var(--teal);
+    padding: clamp(16px, 2.4vw, 22px);
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  aside.note h3 { color: var(--teal); }
+  aside.note p { font-size: 15px; color: var(--ink-soft); max-width: none; margin: 0; }
+  aside.note .from { font-size: 14px; }
+
+  .ladder { display: flex; flex-direction: column; gap: 2px; }
+  .rung {
+    display: grid; grid-template-columns: 54px 1fr; gap: 16px; align-items: center;
+    background: var(--surface); border: 1px solid var(--rule); border-bottom: none;
+    padding: 16px clamp(14px, 2vw, 20px);
+  }
+  .rung.is-final { border-bottom: 1px solid var(--rule); border-left: 4px solid var(--accent); }
+  .rung .times {
+    font-family: var(--mono); font-size: 20px; font-weight: 700;
+    color: var(--ink-faint); font-variant-numeric: tabular-nums;
+  }
+  .rung.is-final .times { color: var(--accent); }
+  .rung p { margin: 0; font-size: 15.5px; color: var(--ink-soft); max-width: none; }
+  .rung b { color: var(--ink); font-weight: 600; }
+
+  footer {
+    border-top: 2px solid var(--ink);
+    padding-top: 22px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  footer p { font-size: 15px; color: var(--ink-soft); }
+
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    ol.path li { grid-template-columns: 28px 1fr; gap: 12px; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <span class="eyebrow">Imersão Cérebro da Empresa · Dia 2 · turma fundadora</span>
+    <h1>Skills e contexto:<br>o que cada uma precisa saber do teu negócio</h1>
+    <p class="lede">O Dia 1 respondeu <em>o que é contexto</em>. Esta página responde a seguinte: como o contexto que você acabou de instalar vira resultado — e como uma skill de fora deixa de devolver a média da internet.</p>
+    <div class="meta">
+      <span>06/08/2026</span>
+      <span>cérebro v1.17.0</span>
+      <span>34 skills catalogadas · 2 skills novas do cérebro</span>
+    </div>
+  </header>
+
+  <section class="thesis">
+    <blockquote>
+      “o ativo escasso é a empresa saber dar contexto para os modelos”
+      <cite>Dia 1 da imersão — minuto 00:05</cite>
+    </blockquote>
+    <p>Skill instalada é <strong>execução emprestada</strong>: ela sabe <em>como fazer</em>, não sabe <em>do teu negócio</em>. É por isso que instalar 90 skills não muda nada e uma skill bem alimentada muda tudo. O que molda a skill é o <strong>arquivo de contexto</strong> que ela lê — e esse arquivo nasce do teu cérebro, não de um formulário.</p>
+  </section>
+
+  <section>
+    <h2>As duas skills novas do cérebro</h2>
+    <div class="grid-2">
+
+      <article class="card">
+        <h3><span class="cmd">/prototipar</span></h3>
+        <p>Uma rodada de ~20 min que transforma o teu contexto no desenho de como o dinheiro entra e como o trabalho sai.</p>
+        <dl class="out">
+          <dt>Sai</dt><dd>Protótipo comercial — quem compra, o que compra, o funil real, onde morre, os 4 artefatos do comercial, as objeções</dd>
+          <dt>Sai</dt><dd>Protótipo de entrega — entregáveis, etapas com dono e gate, <b>a régua de “bom”</b>, o gargalo</dd>
+          <dt>Sai</dt><dd>Diagnóstico — a frente por onde atacar: <b>decisão · venda · entrega</b>. Uma só, com o “não faça ainda”</dd>
+          <dt>Sai</dt><dd>O loop — o que entra, o que sai, quem aprova, o que se mede, o que volta</dd>
+        </dl>
+        <p><strong>Lei zero:</strong> ela não inventa. O que você não disser sai como <code>(não consta — você preenche)</code>. Protótipo com 8 lacunas honestas vale mais que protótipo cheio de palpite — a lacuna é o mapa do que capturar primeiro.</p>
+      </article>
+
+      <article class="card">
+        <h3><span class="cmd">/moldar</span></h3>
+        <p>Pega uma skill de fora e faz ela falar do teu negócio. É a ponte entre o catálogo abaixo e o teu cofre.</p>
+        <ul>
+          <li><strong>Acha o encaixe</strong> — qual arquivo aquela skill lê, e qual decisão ela toma no teu lugar.</li>
+          <li><strong>Puxa do cérebro antes de perguntar</strong> — o que já está em <code>meu-negocio/</code> entra citado, com a data em que você confirmou.</li>
+          <li><strong>Pergunta só o buraco</strong> — no máximo cinco, com as tuas palavras.</li>
+          <li><strong>Escreve onde a skill procura</strong> — não inventa caminho novo pra ficar bonito no cofre.</li>
+          <li><strong>Valida rodando, não lendo</strong> — roda num caso real pequeno e pergunta se saiu com a tua cara.</li>
+        </ul>
+        <p>Saiu genérico? A pergunta certa é <em>qual linha entregou o genérico</em> — aquela linha é a régua que faltava. Duas rodadas costumam bastar; três é o normal.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>O caminho curto</h2>
+    <p>Nesta ordem. Copiar as 34 de uma vez é o erro clássico: instala catálogo, não capacidade.</p>
+    <ol class="path">
+      <li><p><b>Rode <span class="cmd">/prototipar</span>.</b> Ele devolve a frente — decisão, venda ou entrega — e o primeiro trabalho, que é o menor entregável que já sai melhor com contexto.</p></li>
+      <li><p><b>Escolha uma skill</b> do bloco que serve àquela frente. Uma. A tentação de instalar o bloco inteiro é a mesma tentação de conectar todas as fontes no primeiro dia.</p></li>
+      <li><p><b>Rode <span class="cmd">/moldar</span>.</b> Ele escreve o arquivo de contexto daquela skill a partir do teu cérebro e valida numa rodada real.</p></li>
+      <li><p><b>Saiu com a tua cara?</b> Então a próxima. Se não saiu, a correção volta pro arquivo de contexto — é ali que o loop acontece, não no prompt.</p></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>O catálogo — 34 skills em 7 blocos</h2>
+    <p>Curadoria da INEVITA, verificada em 06/08/2026. <strong>Não vêm instaladas e não foram auditadas por nós.</strong> O campo que importa em cada bloco é o arquivo de contexto: é ele que separa a skill genérica da skill que conhece o teu negócio.</p>
+
+    <div class="blocks">
+
+      <article class="block">
+        <div class="block-head">
+          <span class="count">Bloco 0 · 5 skills · comece por aqui</span>
+          <h3>O vault</h3>
+        </div>
+        <div class="chips"><span class="chip">obsidian-cli</span><span class="chip">obsidian-markdown</span><span class="chip">obsidian-bases</span><span class="chip">json-canvas</span><span class="chip">defuddle</span></div>
+        <p class="src">kepano/obsidian-skills — oficial, Kepano é CEO do Obsidian</p>
+        <p>Ensinam o agente a ler e escrever no cofre direto. É o bloco que fecha o circuito da aula: sem ele, as outras 29 rodam contra uma pasta qualquer em vez de rodarem contra o teu cérebro.</p>
+        <div class="ctx">
+          <span class="label">Arquivo de contexto</span>
+          <span>o próprio cofre, com a estrutura de pastas definida — <b>já existe aqui</b></span>
+        </div>
+        <p class="from">Nasce de: a estrutura que o <code>/comecar</code> montou.</p>
+      </article>
+
+      <article class="block">
+        <div class="block-head">
+          <span class="count">Bloco 1 · 7 skills</span>
+          <h3>Design consistente</h3>
+        </div>
+        <div class="chips"><span class="chip">design</span><span class="chip">design-system</span><span class="chip">ui-styling</span><span class="chip">brand</span><span class="chip">taste-skill</span><span class="chip">frontend-design</span><span class="chip">theme-factory</span></div>
+        <p class="src">ui-ux-pro-max-skill · taste-skill · anthropics/skills</p>
+        <div class="ctx">
+          <span class="label">Arquivo de contexto</span>
+          <span><code>design/tokens.md</code> — paleta, escala tipográfica, espaçamento, raio</span>
+          <span><code>design/referencias.md</code> — 3 que você aprova, 3 que rejeita e por quê</span>
+        </div>
+        <p class="from">Nasce de: <code>meu-negocio/posicionamento.md</code> · <code>meu-negocio/entrega.md</code> (a régua de “bom”).</p>
+        <p>O que carrega o bloco são os <strong>3 que você rejeita</strong>. Contra-exemplo molda mais que exemplo.</p>
+      </article>
+
+      <article class="block">
+        <div class="block-head">
+          <span class="count">Bloco 2 · 10 skills</span>
+          <h3>Disciplina de código</h3>
+        </div>
+        <div class="chips"><span class="chip">brainstorming</span><span class="chip">writing-plans</span><span class="chip">executing-plans</span><span class="chip">systematic-debugging</span><span class="chip">test-driven-development</span><span class="chip">verification-before-completion</span><span class="chip">requesting-code-review</span><span class="chip">ponytail-review</span><span class="chip">code-review-and-quality</span><span class="chip">incremental-implementation</span></div>
+        <p class="src">obra/superpowers · DietrichGebert/ponytail · addyosmani/agent-skills</p>
+        <p>Atacam degradação em base grande, code bloat e o “pronto” declarado sem verificação.</p>
+        <div class="ctx">
+          <span class="label">Arquivo de contexto</span>
+          <span><code>eng/decisoes.md</code> — arquitetura e <b>o que já foi descartado</b></span>
+          <span><code>eng/definition-of-done.md</code></span>
+        </div>
+        <p class="from">Nasce de: <code>meu-negocio/decisoes/</code> — decisão descartada com o motivo é exatamente o que o cérebro já guarda.</p>
+      </article>
+
+      <article class="block">
+        <div class="block-head">
+          <span class="count">Bloco 3 · 2 skills</span>
+          <h3>Segurança</h3>
+        </div>
+        <div class="chips"><span class="chip">security-best-practices</span><span class="chip">security-threat-model</span></div>
+        <p class="src">openai/skills</p>
+        <div class="ctx">
+          <span class="label">Arquivo de contexto</span>
+          <span><code>eng/stack.md</code> — linguagens, frameworks, versões</span>
+          <span><code>eng/dados-sensiveis.md</code> — o que guarda, onde ficam os segredos, quem acessa</span>
+        </div>
+        <p class="from">Cuidado: esse arquivo descreve <strong>onde</strong> o segredo mora — nunca o segredo. Valor real vai pra <code>privado/</code>.</p>
+      </article>
+
+      <article class="block is-weak">
+        <div class="block-head">
+          <span class="count">Bloco 4 · 3 skills · o mais fraco do pacote</span>
+          <h3>Token e contexto</h3>
+        </div>
+        <div class="chips"><span class="chip">caveman-compress</span><span class="chip">learn-codebase</span><span class="chip">mem-search</span></div>
+        <p class="src">caveman · claude-mem</p>
+        <div class="ctx" style="background:var(--surface-2);border-left-color:var(--ink-faint)">
+          <span class="label" style="color:var(--ink-faint)">Arquivo de contexto</span>
+          <span>nenhum obrigatório</span>
+        </div>
+        <p>E é justamente por isso que este bloco vale menos que os outros: <strong>skill sem encaixe de contexto é skill que não aprende com o teu negócio.</strong></p>
+      </article>
+
+      <article class="block">
+        <div class="block-head">
+          <span class="count">Bloco 5 · 5 skills · o mais rápido de provar valor</span>
+          <h3>Distribuição e dinheiro</h3>
+        </div>
+        <div class="chips"><span class="chip">product-marketing</span><span class="chip">offers</span><span class="chip">pricing</span><span class="chip">avatar-extraction</span><span class="chip">generic-language-killer</span></div>
+        <p class="src">coreyhaines31/marketingskills · realkimbarrett/advertising-skills</p>
+        <p><code>product-marketing</code> gera <code>.agents/product-marketing.md</code>, lido por todas as outras do mesmo repositório — um autor externo chegando na tese do cérebro sozinho: <strong>uma fonte de contexto, várias execuções em cima</strong>.</p>
+        <div class="ctx">
+          <span class="label">Arquivo de contexto</span>
+          <span><code>negocio/icp.md</code> · <code>negocio/oferta.md</code> · <code>marca/voz.md</code></span>
+        </div>
+        <p class="from">Nasce de: <code>meu-negocio/icp.md</code> · <code>oferta.md</code> · <code>posicionamento.md</code> — já existem aqui. Se a tua frente foi <b>venda</b>, comece por este bloco.</p>
+      </article>
+
+      <article class="block">
+        <div class="block-head">
+          <span class="count">Bloco 6 · 2 skills</span>
+          <h3>Criar as próprias</h3>
+        </div>
+        <div class="chips"><span class="chip">skill-creator</span><span class="chip">writing-skills</span></div>
+        <p class="src">anthropics/skills · obra/superpowers</p>
+        <p>Transformam você em produtor de skill em vez de consumidor de catálogo.</p>
+        <div class="ctx">
+          <span class="label">Arquivo de contexto</span>
+          <span>o cérebro inteiro</span>
+        </div>
+        <p class="from">Skill boa nasce de um trabalho que você já repetiu <strong>três vezes</strong>, não de uma ideia — e quem revela a terceira vez é o <code>/reindex</code>.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Onde o contexto de quem presta serviço mora</h2>
+    <p>Se você entrega pro mesmo cliente mais de uma vez, uma página por cliente não segura. Ele vira pasta — e a pasta tem um arquivo pelo qual ela existe.</p>
+
+    <div class="tree-row">
+      <pre class="tree"><span class="dim">meu-negocio/</span>
+  gente/
+    &lt;apelido-do-cliente&gt;/
+      contexto.md      <span class="dim">quem é, o que comprou, o que a gente prometeu</span>
+      entregas/        <span class="dim">o que já foi feito</span>
+      <span class="hot">julgamentos.md   o que ele aprovou, o que rejeitou e POR QUÊ</span>
+  <span class="dim">·</span>
+  entrega.md         <span class="dim">a régua: o que é "bom" aqui dentro</span>
+  <span class="hot">repete.md</span>          <span class="dim">o que apareceu em 2+ clientes</span>
+  oferta.md          <span class="dim">o que isso vira quando vira produto</span></pre>
+
+      <aside class="note">
+        <h3>Por que <code>julgamentos.md</code></h3>
+        <p>Contexto envelhece. Entrega é histórico. <strong>Julgamento acumulado é a única coisa da pasta que fica mais valiosa a cada mês</strong> — e a única que a concorrência não consegue copiar, porque ela não estava na sala quando o cliente disse não.</p>
+        <blockquote style="font-size:16px">“esse julgamento não está sendo acumulado. E por conta disso, vocês não conseguem olhar para coisas novas”<cite>Dia 1 — minuto 00:20</cite></blockquote>
+        <p class="from"><strong>Uma linha por julgamento:</strong> data · rejeitou o quê · motivo entre aspas, com as palavras dele · virou régua? sim/não</p>
+        <p class="from"><strong>Apelido é papel</strong> — <code>cliente-saas-sc</code>, nunca o nome real. Nome, contato e contrato vivem em <code>privado/</code>.</p>
+      </aside>
+    </div>
+
+    <h3 style="margin-top:14px">A escada — de atender a produtizar</h3>
+    <div class="ladder">
+      <div class="rung"><span class="times">1×</span><p>Um cliente pediu. <b>É pedido.</b> Fica no <code>julgamentos.md</code> dele e não sobe — caso isolado promovido cedo vira regra errada pra todo mundo.</p></div>
+      <div class="rung"><span class="times">2×</span><p>Apareceu em outro cliente. <b>É padrão candidato.</b> Sobe pro <code>repete.md</code> com as duas origens citadas — mas ainda não muda a operação.</p></div>
+      <div class="rung is-final"><span class="times">3×</span><p><b>Parou de ser serviço e virou produto</b> — só que você ainda está cobrando por hora. Sai do <code>repete.md</code> e vira uma das três: régua em <code>entrega.md</code>, linha em <code>oferta.md</code>, ou sistema.</p></div>
+    </div>
+    <p>Quem faz essa varredura não é você lembrando: é o <span class="cmd">/reindex</span> na semana e o <span class="cmd">/revisar</span> no mês. Padrão parado há 90 dias desce de volta como <code>status: superado</code> — nada se deleta.</p>
+  </section>
+
+  <section>
+    <h2>Como inserir o teu contexto</h2>
+    <p>A <span class="cmd">/moldar</span> puxa sozinha o que já está no cofre. O que ela vai te perguntar — e o que quase sempre falta — são estas duas coisas. Elas valem mais que todo o resto do formulário:</p>
+    <div class="qa">
+      <div class="q">
+        <p class="ask">“Quando você olha um entregável pronto e aprova, o que você está olhando?”</p>
+        <p class="why">É a <strong>régua</strong>. Sem ela escrita, a IA gera volume e você vira revisor — o gargalo continua sendo você, só que agora com mais rascunho na fila. Se a resposta for “só eu sei”, isso não é talento: é régua não escrita, e é o primeiro alvo.</p>
+      </div>
+      <div class="q">
+        <p class="ask">“Me dá dois exemplos que você recusaria — e por quê.”</p>
+        <p class="why">É o que impede a skill de convergir pro genérico. <strong>Contra-exemplo molda mais que exemplo:</strong> a média da internet é feita de coisas que ninguém rejeitou explicitamente.</p>
+      </div>
+    </div>
+    <p>E a regra que vale pros dois lados: <strong>não sabe, não inventa.</strong> Campo que fica <code>(não consta — você preenche)</code> funciona; campo preenchido com suposição envenena toda execução seguinte, porque a partir dali a IA trata o palpite como fato do teu negócio.</p>
+  </section>
+
+  <section>
+    <h2>Três avisos antes de instalar</h2>
+    <div class="warns">
+      <div class="warn">
+        <h3>caveman-compress precisa de teste seu</h3>
+        <p>Corta tokens instruindo o agente a falar em estilo telegráfico. Viralizou pela graça. Em tarefa de precisão, a compressão cobra qualidade — teste num caso real antes de adotar.</p>
+      </div>
+      <div class="warn">
+        <h3>learn-codebase e mem-search competem com o pitch do cérebro</h3>
+        <p>São memória automática de sessão. Alguém vai perguntar por que construir cofre se isso já existe. A resposta: <strong>elas guardam o que o agente fez; o cérebro guarda o que você decidiu</strong> — e só a segunda coisa sobrevive à troca de ferramenta.</p>
+      </div>
+      <div class="warn">
+        <h3>Quatro repositórios passaram de 90k estrelas tendo nascido em julho</h3>
+        <p>Pode ser viralização real ou inflação. <strong>Nenhuma skill aqui foi auditada por ninguém</strong> — incluindo por nós. Leia o <code>SKILL.md</code> antes de instalar, e não instale skill que escreve fora do escopo que você espera.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Instalação — o passo que o comando esconde</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Passo</th><th>O que acontece</th></tr></thead>
+        <tbody>
+          <tr><td><code>git clone</code> do repositório</td><td>O <code>cp</code> copia de uma pasta local — ele não baixa nada. Sem clonar antes, o comando não tem de onde copiar.</td></tr>
+          <tr><td><code>cp -r skills/&lt;nome&gt; ~/.claude/skills/</code></td><td>Instala pra todos os teus projetos.</td></tr>
+          <tr><td><code>cp -r skills/&lt;nome&gt; ./.claude/skills/</code></td><td>Instala só neste projeto — o caminho recomendado enquanto você está testando.</td></tr>
+          <tr><td><span class="cmd">/moldar</span></td><td>Escreve o arquivo de contexto daquela skill a partir do teu cérebro. Sem este passo, você instalou execução emprestada.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Como receber tudo isto:</strong> rode <span class="cmd">/atualizar</span>. Vem o motor novo — as skills <code>/prototipar</code> e <code>/moldar</code>, o gabarito <code>meu-negocio/entrega.md</code> e o catálogo completo em <code>comunidade/inevita/skills-disponiveis/</code>. <strong>O teu contexto não é tocado</strong>: o atualizador não escreve em <code>meu-negocio/</code>, <code>capturas/</code> nem <code>privado/</code>.</p>
+    <p class="src">INEVITA · Imersão Cérebro da Empresa · cérebro v1.17.0 · 06/08/2026</p>
+  </footer>
+
+</div>

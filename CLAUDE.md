@@ -45,8 +45,8 @@ elos: [[conceito-a]] · [[conceito-b]]
 - `meu-negocio/` — o **teu contexto**, por horizonte de uso:
   - `mapa.md` — **O MAPA**: o negócio numa página + a métrica principal. Toda resposta estratégica ancora aqui primeiro.
   - `fios/` — **AGORA**: o que está quente (decisões/problemas em andamento)
-  - `gente/` — **PESSOAS**: uma página por cliente/parceiro/concorrente-chave (o eixo pessoa; `/call` e `/daily` alimentam)
-  - `oferta.md` · `icp.md` · `posicionamento.md` · `o-que-funciona.md` · `decisoes/` — **ÁREAS** perenes
+  - `gente/` — **PESSOAS**: uma página por cliente/parceiro/concorrente-chave (o eixo pessoa; `/call` e `/daily` alimentam). Cliente com entrega recorrente vira pasta: `contexto.md` · `entregas/` · `julgamentos.md` (o que ele aprovou, o que rejeitou e **por quê** — o arquivo pelo qual a pasta existe)
+  - `oferta.md` · `icp.md` · `posicionamento.md` · `entrega.md` · `o-que-funciona.md` · `repete.md` · `decisoes/` — **ÁREAS** perenes
   - `dailies/` — **TEMPO**: o rollup de cada dia + o resumo da semana
   - `teste-do-cerebro.md` — as perguntas-canário (a régua do `/teste`)
   - `arquivo/` — o que **esfriou** (não se joga fora; sai do caminho)
@@ -68,6 +68,8 @@ elos: [[conceito-a]] · [[conceito-b]]
 ## Como você opera (as skills e seus relógios)
 - **Começou agora?** Rode `/comecar` e conduza uma fonte real até A2. Não imponha o `/teste`.
 - **Quer um resultado?** Rode `/operar` e escolha um sistema instalado.
+- **"Instalei — e agora, como isso vira dinheiro?"** `/prototipar` — protótipo comercial, protótipo de entrega, a frente por onde atacar (decisão · venda · entrega) e o loop.
+- **Instalou uma skill de fora e o resultado saiu genérico?** `/moldar` — escreve o arquivo de contexto que aquela skill lê, a partir do teu cérebro, e valida numa rodada real. Catálogo em `comunidade/inevita/skills-disponiveis/`.
 - **Quer entender o método?** Rode `/metodo`.
 - **Chegou uma fonte e a dúvida é "trato ou não trato"?** `/fonte` — a régua de `FONTES.md` decide o nível de refino (0 ponteiro → 4 operacional) e para onde o trabalho exige.
 - **Capturar algo?** `/guardar` (ou "guarda isso") — você propõe o átomo, a pessoa aprova.

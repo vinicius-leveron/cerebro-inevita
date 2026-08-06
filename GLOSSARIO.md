@@ -14,6 +14,9 @@
 | **Ponteiro** | Nível 0: o cérebro registra ONDE a fonte está, sem copiar nem converter. A maioria das fontes vive (bem) aqui. |
 | **Motor vs contexto** | Motor = skills e gabaritos (nossos, atualizam via `/atualizar`). Contexto = tuas notas (nunca tocadas por atualização). [harness — o termo do Vale: "fix your harness, don't reprompt"] |
 | **Skill** | Know-how executável: um comando que sabe fazer UMA coisa, com as regras embutidas. [skills — workshop AIEWF] |
+| **Arquivo de contexto** | O arquivo que uma skill lê pra saber do TEU negócio (ex.: `design/tokens.md`). É projeção de `meu-negocio/`, nunca segunda fonte. Skill sem ele devolve a média da internet. |
+| **Protótipo** | O desenho em rascunho de como o dinheiro entra (comercial) e como o trabalho sai (entrega), montado com as palavras do dono e com as lacunas marcadas. É a planta que os sistemas automatizam — nunca o palpite da IA. |
+| **Frente** | Uma das três portas onde a primeira fonte encosta: **decisão · venda · entrega**. Escolhe-se a que paga tempo ou dinheiro mais rápido — uma só. |
 | **Sistema** | Pacote de um resultado completo: manifest + pipeline + rotinas + skill + eval + feedback + versão. |
 | **Pipeline** | Estados pelos quais uma entrada vira uma saída verificável. |
 | **Rotina** | Gatilho por evento ou cadência que inicia ou revisa um pipeline. |
@@ -24,7 +27,9 @@
 | **Primeira vitória (A2)** | Artefato de fonte real, aprovado, que o dono confirma ajudar a decidir ou agir. Instalação é A0; começo é A1. |
 | **Contribuição** | Payload anonimizado que o dono prepara, aprova e decide enviar à comunidade em passos separados. |
 | **Fios** | Os assuntos quentes em andamento (`fios/`) — o horizonte AGORA do negócio. |
-| **Gente** | O eixo pessoa (`gente/`): uma página por cliente/parceiro/concorrente-chave. |
+| **Gente** | O eixo pessoa (`gente/`): uma página por cliente/parceiro/concorrente-chave. Cliente com entrega recorrente vira pasta. |
+| **Julgamento** | O aprovado/rejeitado **com o motivo literal** (`julgamentos.md`). É o discernimento que hoje mora só na cabeça do dono; acumulado, é o que a concorrência não copia. |
+| **Repete** | A escada entre atender e produtizar (`repete.md`): 1× é caso · 2× é padrão candidato · 3× vira régua, oferta ou sistema. |
 | **Mapa** | O negócio numa página (`mapa.md`) + a métrica principal. Toda resposta estratégica ancora aqui. |
 | **Relógios** | As cadências do método: `/daily` (dia), `/reindex` (semana), `/revisar` + `/teste` (mês). |
 | **Perguntas-canário** | As 5 perguntas fixas do TEU negócio que medem se o cérebro está aprendendo (`teste-do-cerebro.md`). [evals / golden patterns — os termos do Vale; "canário" é metáfora nossa] |

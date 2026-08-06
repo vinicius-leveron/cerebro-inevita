@@ -10,6 +10,9 @@ Esta área é nossa → tua. Recebe catálogo, sistemas e atualizações curadas
 - 🔒 **Geração de Demanda (piloto do Laboratório — ciclo 001):** não é distribuído no catálogo.
   O pacote é entregue e instalado pela INEVITA no comissionamento, somente para participantes
   aprovados do Lab. Candidatura na página pública do Laboratório.
+- **Pacote de 34 skills de fora (curadoria 06/08/2026):** catálogo em
+  `skills-disponiveis/_CATALOGO.md`. Não vêm instaladas e não foram auditadas por nós — cada bloco
+  declara o arquivo de contexto que a skill lê, e a `/moldar` escreve esse arquivo a partir do teu cérebro.
 - **Acervo de contexto:** disponível em `conhecimento/`, conforme teu acesso.
 
 ## Em construção — não disponível ainda
