@@ -49,3 +49,7 @@ comunidade/minhas-contribuicoes/aprovadas/*
 !comunidade/minhas-contribuicoes/aprovadas/_LEIA.md
 comunidade/minhas-contribuicoes/enviadas/*
 !comunidade/minhas-contribuicoes/enviadas/_LEIA.md
+
+# artefatos de execução de skills em Python
+__pycache__/
+*.pyc
