@@ -1,6 +1,6 @@
 # Mudanças do cérebro INEVITA
 
-## v1.19.0 — 2026-08-12 · "a gravação vira texto — o elo que faltava"
+## v1.21.0 — 2026-08-13 · "a gravação vira texto — o elo que faltava"
 
 - **Skill `/transcrever` nova:** áudio ou vídeo vira transcrição com timestamp, e é a
   primeira vez que o cérebro consegue fazer isso sozinho. Até aqui `FONTES.md` mandava
@@ -19,6 +19,42 @@
   costura que soma offset errado. Rodam sem rede e sem mídia (`--teste`).
 - `skills/_CATALOGO.md` ganhou `transcrever` e também `society`, que tinha ficado de fora
   quando entrou na v1.18.0.
+## v1.20.0 — 2026-08-12 · “o método vira Sistema e o Sistema aprende por Experimentos”
+
+- **Método de Sistemas completo e público:** separa Cérebro, Sistema, pipeline, rotina, skill,
+  conexão, gate, agente, eval e feedback; ensina o contrato das oito unidades, fronteiras de dados,
+  régua, recibo, maturidade e Self Improvement supervisionado.
+- **Método de Experimentos executável:** gargalo com evidência → hipótese → pré-registro congelado
+  → coleta diária → leitura na data → decisão humana → mudança versionada na próxima execução. A
+  leitura preserva limites e não transforma entrega mínima em significância estatística.
+- **Templates copiáveis:** pacote de Sistema com manifest, configuração privada, pipeline, rotinas,
+  contrato da skill, evals, feedback e changelog; Experimento com região compatível com
+  `system-experiment.mjs`.
+- **Telemetria explicada sem eufemismo:** os métodos e o onboarding listam identificadores e eventos
+  técnicos possíveis, reafirmam que conteúdo não viaja e mostram os dois mecanismos de opt-out.
+- **Fronteira da Society preservada:** o aberto entrega arquitetura e templates; System Packs,
+  julgamento de operadores, golden patterns, laboratórios, casos e releases validados continuam
+  sendo capacidade da rede.
+
+## v1.19.0 — 2026-08-12 · “o Architect revela onde construir primeiro”
+
+- **Skill `/arquiteto` no Cérebro aberto:** depois que o contexto prova que consegue voltar a
+  trabalhar, o agente pode mapear uma operação e propor o primeiro sistema. Invocação direta
+  continua permitida; o onboarding não virou pedágio nem menu de catorze comandos.
+- **Uma régua visível de prova:** V0 declarado → V1 evidência parcial → V2 verificado pelo
+  responsável → V3 validado por execução e resultado. O engine bloqueia promoção de estado sem a
+  evidência correspondente.
+- **Ranking explicável e supervisionado:** no máximo três oportunidades, prioridade ordinal,
+  `reason_codes` e explicação. Sem score inventado; mapa e ordem continuam proposta até o gate
+  humano.
+- **Visual `spec → engine`:** `architect-spec.json` é a fonte canônica e o renderer determinístico
+  usa a identidade/validação de colisões de `frameworks-visuais`. HTML ou desenho livre do modelo
+  não fazem parte do pipeline.
+- **Privacidade e atualização:** specs e mapas ficam em `operacao/arquitetura/`, fora do Git e sem
+  envio de conteúdo. A telemetria registra apenas que um mapa foi gerado e seu estado V0–V3.
+- **Fronteira honesta:** o aberto diagnostica e recomenda; Society concentra acervo, System Packs,
+  laboratórios, releases e instalação assistida. A v1.19 corrige também o manifesto para que a
+  skill `/society` da v1.18 chegue a instalações antigas.
 
 ## v1.18.0 — 2026-08-10 · “o acervo da Society desce pra dentro do teu Cérebro”
 

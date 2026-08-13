@@ -5,6 +5,12 @@ import { join, resolve } from 'node:path';
 const ROOT = resolve(process.cwd());
 const errors = [];
 const required = [
+  'METODO-SISTEMAS.md', 'METODO-EXPERIMENTOS.md',
+  'templates/experimento.md',
+  'templates/sistema/manifest.md', 'templates/sistema/configuracao.md',
+  'templates/sistema/pipeline.md', 'templates/sistema/rotinas.md',
+  'templates/sistema/skill-contract.md', 'templates/sistema/evals.md',
+  'templates/sistema/feedback.md', 'templates/sistema/changelog.md',
   'meu-negocio', 'sistemas/_CATALOGO.md', 'skills/_CATALOGO.md', 'conexoes/_CATALOGO.md',
   'operacao/_LEIA.md', 'comunidade/inevita/_CATALOGO.md',
   'comunidade/minhas-contribuicoes/_LEIA.md', '.cerebro/seed.manifest',
@@ -14,6 +20,13 @@ const required = [
   'sistemas/cerebro-base/rotinas.md', 'sistemas/cerebro-base/evals.md',
   'sistemas/cerebro-base/feedback.md', 'sistemas/cerebro-base/changelog.md',
   '.claude/skills/operar/SKILL.md',
+  '.claude/skills/arquiteto/SKILL.md',
+  '.claude/skills/arquiteto/agents/openai.yaml',
+  '.claude/skills/arquiteto/references/architect-spec.schema.json',
+  '.claude/skills/arquiteto/references/architect-spec.example.json',
+  '.claude/skills/arquiteto/scripts/render-map.mjs',
+  'operacao/arquitetura/_LEIA.md',
+  'scripts/test-architect.mjs',
   'scripts/discover-context.mjs', 'scripts/register-source.mjs',
   'scripts/concierge-run.mjs', 'scripts/test-concierge-run.mjs',
   'scripts/test-context-discovery.mjs',
@@ -35,6 +48,38 @@ const required = [
 
 for (const item of required) {
   if (!existsSync(join(ROOT, item))) errors.push(`faltando: ${item}`);
+}
+
+const systemsMethod = readFileSync(join(ROOT, 'METODO-SISTEMAS.md'), 'utf8');
+for (const contract of [
+  'As oito unidades do contrato',
+  'Motor compartilhável × configuração privada',
+  'O método circula. Os dados não.',
+  'A IA organiza evidência e opções; o humano dá o',
+  'O que é aberto e o que a Society acrescenta',
+]) {
+  if (!systemsMethod.includes(contract)) errors.push(`método de sistemas sem contrato: ${contract}`);
+}
+
+const experimentsMethod = readFileSync(join(ROOT, 'METODO-EXPERIMENTOS.md'), 'utf8');
+for (const contract of [
+  'Critério vem antes do dado',
+  'Ler diariamente protege o experimento',
+  'O martelo permanece humano',
+  'o que NÃO ficou provado',
+  'system-experiment.mjs meu-sistema freeze',
+]) {
+  if (!experimentsMethod.includes(contract)) errors.push(`método de experimentos sem contrato: ${contract}`);
+}
+
+const experimentTemplate = readFileSync(join(ROOT, 'templates', 'experimento.md'), 'utf8');
+for (const contract of [
+  '## EXP-001', '### Pré-registro', '### Emendas',
+  '- dono da leitura:', '- baseline:', '- hipótese:', '- mudança única:',
+  '- métrica primária:', '- guardrail:', '- janela de leitura:', '- regra de decisão:',
+  '- o que NÃO ficou provado:', '- decisão: manter | corrigir | descartar | inconclusivo',
+]) {
+  if (!experimentTemplate.includes(contract)) errors.push(`template de experimento incompatível: ${contract}`);
 }
 
 // Todo pacote presente em sistemas-disponiveis precisa estar completo — inclusive pacotes
@@ -117,6 +162,7 @@ for (const event of [
   'system_installed', 'system_commissioning', 'system_first_run', 'system_activated',
   'system_needs_attention',
   'system_run_started', 'system_run_completed', 'system_value_confirmed',
+  'architect_map_generated',
 ]) {
   if (!ping.includes(event)) errors.push(`ping sem evento: ${event}`);
 }
@@ -144,6 +190,8 @@ for (const contract of [
   '--milestone T4',
   'Não releia a fonte bruta',
   'Isso aproveitou o que acabamos de organizar',
+  'Somente depois de T4',
+  'qual sistema faz sentido construir primeiro',
 ]) {
   if (!comecar.includes(contract)) errors.push(`comecar sem contrato de retomada: ${contract}`);
 }
@@ -201,10 +249,42 @@ for (const contract of [
   if (!brainContract.includes(contract)) errors.push(`CLAUDE sem contrato vivo/procedural: ${contract}`);
 }
 
+const architect = readFileSync(join(ROOT, '.claude', 'skills', 'arquiteto', 'SKILL.md'), 'utf8');
+for (const contract of [
+  'V0 · declarado',
+  'V1 · evidência parcial',
+  'V2 · verificado',
+  'V3 · validado',
+  'human-proposed-v0',
+  'reason_codes',
+  'HTML, SVG ou Excalidraw escrito livremente',
+  'execute `/prototipar`',
+  'Execute `/fonte`',
+  'execute `/operar`',
+]) {
+  if (!architect.includes(contract)) errors.push(`arquiteto sem contrato: ${contract}`);
+}
+const architectRenderer = readFileSync(join(ROOT, '.claude', 'skills', 'arquiteto', 'scripts', 'render-map.mjs'), 'utf8');
+for (const contract of [
+  "const LEVELS = ['V0', 'V1', 'V2', 'V3']",
+  'human-proposed-v0',
+  'exige validation.human_confirmation',
+  'V3 exige validation.run',
+  'frameworks-visuais',
+  'architect_map_generated',
+]) {
+  if (!architectRenderer.includes(contract)) errors.push(`engine do arquiteto sem guarda: ${contract}`);
+}
+
 const motorManifest = readFileSync(join(ROOT, '.cerebro', 'motor.manifest'), 'utf8');
 for (const contract of [
   '.cerebro/private-ignore.manifest',
   '.claude/skills/briefing-comercial',
+  '.claude/skills/arquiteto',
+  '.claude/skills/society',
+  'METODO-SISTEMAS.md',
+  'METODO-EXPERIMENTOS.md',
+  'templates',
 ]) {
   if (!motorManifest.includes(contract)) errors.push(`manifesto do motor sem upgrade: ${contract}`);
 }
@@ -264,6 +344,9 @@ if (!ignore.includes('.cerebro/concierge-runs/')) {
 }
 if (!ignore.includes('.cerebro/sistemas/')) {
   errors.push('estado privado dos sistemas não está protegido pelo .gitignore');
+}
+if (!ignore.includes('operacao/arquitetura/*')) {
+  errors.push('mapas privados do Architect não estão protegidos pelo .gitignore');
 }
 
 const baseManifest = readFileSync(join(ROOT, 'sistemas', 'cerebro-base', 'manifest.md'), 'utf8');

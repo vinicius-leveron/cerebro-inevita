@@ -61,6 +61,10 @@ somente um caso recente — uma reunião, conversa, mensagem, documento ou outro
 Uma reunião pode virar decisões e ações; um briefing, uma mensagem ou uma proposta pedem outro
 tipo de entrega. O cérebro escolhe o formato pelo trabalho, não força todo material a virar resumo.
 
+Depois que o contexto aprovado volta numa segunda tarefa, o Cérebro pode abrir o `/arquiteto`: ele
+mapeia como uma operação funciona, mostra o que é só declarado e o que já tem evidência, e propõe o
+primeiro sistema para o responsável confirmar. Diagnóstico não finge implantação nem validação.
+
 O acervo do AI Engineer World's Fair continua disponível com fonte e minuto do vídeo, mas funciona
 como referência para melhorar uma decisão. Ele não substitui o contexto do seu negócio.
 
@@ -71,15 +75,30 @@ como referência para melhorar uma decisão. Ele não substitui o contexto do se
 - `skills/` — julgamentos reutilizáveis do motor.
 - `conexoes/` — arquivos e integrações opcionais.
 - `operacao/` — seu brief vivo, o que rodou, falhou, escalou e os caminhos aprovados que podem ser reutilizados.
+- `operacao/arquitetura/` — specs privadas e mapas visuais produzidos pelo `/arquiteto`.
 - `comunidade/inevita/` — o que recebemos da INEVITA.
 - `comunidade/minhas-contribuicoes/` — o que você pode decidir compartilhar.
 - `conhecimento/` — referências externas; `capturas/` — bruto; `privado/` — PII local.
 
+## Quando quiser construir além da primeira vitória
+
+- **Onde aplicar primeiro:** rode `/arquiteto` para mapear uma operação e propor o primeiro Sistema.
+- **Como um Sistema funciona:** leia [`METODO-SISTEMAS.md`](METODO-SISTEMAS.md) e use
+  [`templates/sistema/`](templates/sistema/).
+- **Como testar uma mudança sem enganar a leitura:** leia
+  [`METODO-EXPERIMENTOS.md`](METODO-EXPERIMENTOS.md) e use
+  [`templates/experimento.md`](templates/experimento.md).
+
+O material aberto entrega arquitetura e templates. Os System Packs, laboratórios, casos e releases
+validados pela rede entram pela Society.
+
 ## Privacidade, ping e comunidade
 
-Seu contexto fica local. Para medir ativação, o cérebro envia ping mínimo: código aleatório da
-instalação, evento, versão, sistema operacional, runtime e, quando existe, `system_id`. Nunca envia
-fonte, output, decisão, erro ou texto. Desligar: crie `.cerebro/sem-telemetria`.
+Seu contexto fica local. Para medir ativação, o cérebro envia telemetria técnica opcional: evento,
+`install_id`, versão, sistema operacional, runtime e, quando configurados, e-mail de acesso ou
+`member_id`. Runs de Sistemas também podem levar IDs opacos, versão, resultado do eval e decisão
+humana categórica. Nunca envia fonte, output, erro ou texto. Desligar: crie
+`.cerebro/sem-telemetria` ou use `CEREBRO_TELEMETRY=off`.
 
 Quando encontra um padrão útil, o cérebro pode perguntar se você quer **preparar** uma contribuição
 anonimizada. Ele mostra o payload exato. Aprovar não envia; enviar pede outro “sim”. A rede e o

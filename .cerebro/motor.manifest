@@ -7,8 +7,11 @@ GEMINI.md
 COMECE-AQUI.md
 METODO.md
 METODO-COMPLETO.md
+METODO-SISTEMAS.md
+METODO-EXPERIMENTOS.md
 GLOSSARIO.md
 PROTOTIPAR-PORTATIL.md
+templates
 VERSION
 CHANGELOG.md
 .cerebro/source
@@ -18,6 +21,7 @@ CHANGELOG.md
 .cerebro/acesso.yaml
 .claude/settings.json
 .claude/skills/comecar
+.claude/skills/arquiteto
 .claude/skills/prototipar
 .claude/skills/operar
 .claude/skills/briefing-comercial
@@ -31,6 +35,7 @@ CHANGELOG.md
 .claude/skills/teste
 .claude/skills/transcrever
 .claude/skills/frameworks-visuais
+.claude/skills/society
 .claude/scripts
 .agents/skills
 .agents/scripts
