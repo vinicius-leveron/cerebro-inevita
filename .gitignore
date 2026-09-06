@@ -67,3 +67,7 @@ comunidade/minhas-contribuicoes/enviadas/*
 # artefatos de execução de skills em Python
 __pycache__/
 *.pyc
+
+# Local backups of platform routing changes
+.cerebro/platform-migration-backup/
+.cerebro/migrate-platform.mjs

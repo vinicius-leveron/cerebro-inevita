@@ -1,5 +1,12 @@
 # Mudanças do cérebro INEVITA
 
+## v1.36.1 — 2026-09-06 · Endereço estável da plataforma
+
+- Ativação, telemetria, instalação de Sistemas e Society usam o proxy do domínio INEVITA.
+- Canal desta distribuição: `vinicius-leveron/cerebro-inevita`.
+- A skill de transcrição existente nesta cópia foi preservada.
+
+
 ## v1.36.0 — 2026-09-03 · “a INEVITA ganha uma voz dentro do Cérebro”
 
 - **Central permanente em `Cérebro → Atualizações`:** versão instalada, verificação do motor,
