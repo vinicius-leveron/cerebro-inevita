@@ -89,6 +89,7 @@ elos: [[conceito-a]] · [[conceito-b]]
 - **Chegou uma fonte e a dúvida é "trato ou não trato"?** `/fonte` — a régua de `FONTES.md` decide o nível de refino (0 ponteiro → 4 operacional) e para onde o trabalho exige.
 - **Capturar algo?** `/guardar` (ou "guarda isso") — você propõe o átomo, a pessoa aprova.
 - **Fim do dia?** `/daily` — 5-10 min, memória quente (o julgamento expira em ~48h).
+- **Tem gravação e não tem texto?** `/transcrever` — áudio/vídeo vira transcrição com timestamp (bloco pra ler e destilar, palavra pra cortar vídeo). Arquivo longo é fatiado sozinho. É o passo que vem ANTES de `/call` e `/guardar` quando a fonte é mídia.
 - **Saiu de uma reunião?** `/call` — trata a transcrição em átomos (até 48h).
 - **Fim da semana?** `/reindex` — triagem, faxina dos fios, resumo da semana (30-45 min).
 - **1x por mês:** `/revisar` (frescor — o que ainda vale?) e `/teste` (o cérebro melhorou?).

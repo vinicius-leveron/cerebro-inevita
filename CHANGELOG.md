@@ -334,6 +334,25 @@
 - **Ordem explícita:** primeiro run manual e human gate; rotina quando o trabalho se repete; conexão
   de leitura quando a fonte prova valor; escrita/automação só depois da régua.
 
+## v1.21.0 — 2026-08-13 · "a gravação vira texto — o elo que faltava"
+
+- **Skill `/transcrever` nova:** áudio ou vídeo vira transcrição com timestamp, e é a
+  primeira vez que o cérebro consegue fazer isso sozinho. Até aqui `FONTES.md` mandava
+  "reunião → transcrição, e o minuto que sustenta cada uma" e `/call` pedia transcrição
+  pronta — mas **nenhuma skill produzia esse texto**. Quem tinha uma gravação parava ali.
+- **Uma chamada, duas granularidades.** Sai `<nome>.md` (blocos `[H:MM:SS]`, com
+  frontmatter, `pode-ir-comunidade: false`) pra você e a IA lerem, e `<nome>.words.json`
+  (timestamp de palavra) pra máquina. Transcrever duas vezes daria timestamps diferentes e
+  quebraria citação já feita — por isso as duas saem juntas.
+- **Arquivo longo passa.** Um podcast de 2h estoura o limite de upload da API. A skill fatia
+  sozinha, cortando no **silêncio** mais próximo do limite (não em ponto fixo, que parte
+  palavra ao meio) e somando o offset de cada fatia. Testado num arquivo real de 2h01: 2
+  fatias, corte em 1:44:36 num silêncio, cobertura sem buraco.
+- **`--doctor`** diz o que falta (ffmpeg, curl, chave) e o comando de instalação por sistema.
+- **16 testes** das duas regras que corrompem em silêncio: fatiamento que deixa buraco e
+  costura que soma offset errado. Rodam sem rede e sem mídia (`--teste`).
+- `skills/_CATALOGO.md` ganhou `transcrever` e também `society`, que tinha ficado de fora
+  quando entrou na v1.18.0.
 ## v1.20.0 — 2026-08-12 · “o método vira Sistema e o Sistema aprende por Experimentos”
 
 - **Método de Sistemas completo e público:** separa Cérebro, Sistema, pipeline, rotina, skill,
