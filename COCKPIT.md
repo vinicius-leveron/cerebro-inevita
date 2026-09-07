@@ -69,6 +69,19 @@ Se a versão do Hermes oferecer `skills trust`, o Cockpit usa a confiança expl�
 versões compatíveis sem esse comando, ele registra apenas `.agents/skills` em
 `skills.external_dirs`; a ausência do comando não bloqueia a ativação.
 
+O conteúdo permanece armazenado na máquina, mas uma execução com Codex ou outro provider envia ao
+provider escolhido somente o recorte necessário para inferência. O Cockpit mostra essa fronteira;
+“local-first” não significa que o modelo execute sem receber contexto.
+
+## Primeiro loop da aula
+
+A prova principal segue `começar → fonte → trabalho → origem → correção → reuso`. Ao abrir um
+output com Context Snapshot, o Cockpit coloca resultado e origens no mesmo enquadramento. Uma
+correção exibe três estados independentes: registrada pelo julgamento, aplicada em um novo Run e
+resultado corrigido aprovado. O segundo estado não implica o terceiro.
+
+Checklist completo em [`docs/ACEITE-AULA-CEREBRO.md`](docs/ACEITE-AULA-CEREBRO.md).
+
 ## Fronteira humana
 
 Confiar nas skills permite que o Hermes use o método do Cérebro. Não habilita modo autônomo. O

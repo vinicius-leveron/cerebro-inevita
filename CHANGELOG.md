@@ -1,5 +1,18 @@
 # Mudanças do cérebro INEVITA
 
+## v1.37.1 — 2026-09-07 · “a primeira prova fecha sem apagar o que é teu”
+
+- **Resultado e origem no mesmo enquadramento:** outputs com Context Snapshot abrem com o
+  resultado e os ponteiros usados lado a lado; no celular, a mesma prova fica empilhada.
+- **Correção não é aprovação:** o Cockpit distingue correção registrada, aplicada num novo Run e
+  resultado corrigido aprovado.
+- **Atualização com preflight:** alteração local em arquivo do motor cancela toda a atualização
+  antes da primeira cópia. Arquivos adicionais dentro das pastas continuam preservados.
+- **Um contrato para os dois atualizadores:** o caminho Bash legado passa a delegar ao verificador
+  Node multiplataforma.
+- **Fronteira de produto documentada:** gratuito, operacional pago e acervo Society deixam de ser
+  apresentados como uma única entrega.
+
 ## v1.37.0 — 2026-09-03 · “o cérebro chega ao Telegram em três gestos”
 
 - **Hermes + Telegram dentro do Cockpit oficial:** a experiência rica que já opera em

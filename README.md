@@ -118,6 +118,16 @@ Desligar é uma linha, e o agente respeita:
 export CEREBRO_TELEMETRY=off        # ou: touch .cerebro/sem-telemetria
 ```
 
+## Gratuito, Society e operação da empresa
+
+Este repositório é o **Cérebro gratuito**: primeiro loop, Cockpit, contexto individual e Hermes
+pessoal. Ele não é uma versão mutilada e continua útil sem assinatura.
+
+O **Cérebro Operacional Society** é outro produto: ambiente privado da empresa em infraestrutura
+própria, com equipe, terceiros, permissões e auditoria. O acervo da Society também é uma camada
+separada. Receber conhecimento ou atualização nunca envia automaticamente o contexto da empresa
+para a INEVITA e nunca concede novas permissões ou ativa rotinas.
+
 ## Comunidade
 
 - **[Discussions](https://github.com/gabrielzucco/cerebro-inevita/discussions)** — mostra teu

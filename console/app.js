@@ -3484,6 +3484,13 @@ function correctionSection(detail) {
   if (!correction) return '';
   const learning = correction.learning_candidate;
   return `<section class="drawer-section"><h3>Linhas de correção</h3>
+    <div class="correction-proof" aria-label="Estado comprovado da correção">
+      <span>${badge('recorded', 'good', 'Correção registrada')}<small>há Judgment Receipt</small></span>
+      <b>→</b>
+      <span>${badge(correction.status === 'completed' ? 'applied' : correction.status, correction.status === 'completed' ? 'good' : 'warn', correction.status === 'completed' ? 'Aplicada em novo Run' : label(correction.status))}<small>${escapeHtml(correction.role === 'candidate' ? 'este é o resultado corrigido' : 'há um resultado corrigido ligado')}</small></span>
+      <b>→</b>
+      <span>${detail.judgment?.summary?.status === 'approved' || detail.judgment?.summary?.verdict === 'approved' ? badge('approved', 'good', 'Resultado aprovado') : badge('pending', 'warn', 'Aguardando julgamento')}<small>aprovação é independente da reexecução</small></span>
+    </div>
     <div class="correction-lineage"><div><span>Baseline</span><code>${escapeHtml(correction.baseline_receipt_ref)}</code></div><b>→</b><div><span>Novo Run</span><code>${escapeHtml(correction.resulting_receipt_ref)}</code></div></div>
     <p class="section-help">O recibo aponta para o julgamento que originou a correção; não copia a nota nem os outputs.</p>
     ${learning ? `<div class="learning-candidate"><div>${badge('candidate', 'neutral')}<strong>${learning.occurrences}/${learning.promotion_threshold}</strong></div><p>Ainda exige casos comparáveis, replay e novo martelo para mudar o Sistema.</p><code>${escapeHtml(learning.candidate_ref)}</code></div>` : ''}
@@ -3573,14 +3580,17 @@ async function openJudgment(receiptId) {
     const current = detail.judgment.summary;
     $('#drawer-content').innerHTML = `<div class="drawer-head"><p class="eyebrow">OUTPUT PRIVADO</p><h2>${escapeHtml(detail.receipt.routine_id)}</h2>${badge(current.status === 'pending' ? 'pending' : current.verdict)}</div>
       <div class="boundary-note"><b>Leitura local explícita</b>Este conteúdo não entrou no recibo, no read model ou na INEVITA. Abrir não executou modelo.</div>
-      <section class="drawer-section"><div class="output-heading"><h3>Resultado</h3><span>${detail.output.bytes} bytes</span></div><pre class="private-output">${escapeHtml(detail.output.content)}</pre></section>
-      ${detail.context_available ? `<section class="drawer-section"><div class="output-heading"><h3>Contexto selecionado</h3><button class="table-action" data-load-context="${escapeHtml(receiptId)}">Abrir Run Record V2 →</button></div><div id="context-slot"></div></section>` : ''}
+      <div class="proof-split${detail.context_available ? '' : ' output-only'}">
+        <section class="drawer-section proof-result"><div class="output-heading"><h3>Resultado</h3><span>${detail.output.bytes} bytes</span></div><pre class="private-output">${escapeHtml(detail.output.content)}</pre></section>
+        ${detail.context_available ? `<section class="drawer-section proof-origin"><div class="output-heading"><h3>Origens usadas</h3><span>ponteiros do Run Record</span></div><div id="context-slot"><p class="muted">Lendo as origens registradas…</p></div></section>` : ''}
+      </div>
       ${correctionSection(detail)}
       <section class="drawer-section"><h3>Seu julgamento</h3><p class="section-help">A nota fica privada. Pedir ajuste, rejeitar ou propor ação exige explicar por quê.</p>${verdictGuide()}<textarea id="judgment-note" maxlength="2000" placeholder="O que está certo, o que precisa mudar ou qual ação deveria ser considerada?"></textarea></section>
       <section class="drawer-section"><h3>Histórico imutável</h3><div class="timeline">${judgmentHistory(detail.judgment.history)}</div></section>
       <div class="boundary-note action-boundary"><b>Propor não é executar</b>“Propor ação” registra intenção local. Não cria task, não envia mensagem, não publica e não altera Fonte.</div>
       ${judgmentZones(detail)}`;
     state.rerunPending = Boolean(detail.correction_actions?.can_rerun_with_correction);
+    if (detail.context_available) await loadContext(receiptId, $('#context-slot'));
   } catch (error) {
     $('#drawer-content').innerHTML = empty('Output indisponível', label(error.message));
     toast(label(error.message), 'bad');
