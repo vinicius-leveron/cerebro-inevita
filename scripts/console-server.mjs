@@ -1449,12 +1449,20 @@ export function createConsoleServer({
         sendStatic(response, 'app.js', 'text/javascript; charset=utf-8');
         return;
       }
+      if (request.method === 'GET' && url.pathname === '/experience.js') {
+        sendStatic(response, 'experience.js', 'text/javascript; charset=utf-8');
+        return;
+      }
       if (request.method === 'GET' && url.pathname === '/canvas.bundle.js') {
         sendStatic(response, 'canvas.bundle.js', 'text/javascript; charset=utf-8');
         return;
       }
       if (request.method === 'GET' && url.pathname === '/styles.css') {
         sendStatic(response, 'styles.css', 'text/css; charset=utf-8');
+        return;
+      }
+      if (request.method === 'GET' && url.pathname === '/experience.css') {
+        sendStatic(response, 'experience.css', 'text/css; charset=utf-8');
         return;
       }
       if (request.method === 'GET' && url.pathname === '/favicon.ico') {

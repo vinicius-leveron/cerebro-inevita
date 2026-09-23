@@ -26,17 +26,19 @@ O comando antigo `node scripts/console-server.mjs` continua funcionando na porta
 
 ## O que aparece
 
-- **Hoje:** fila operacional, próximo passo, entregas para julgar, rotinas e estado do Hermes.
-- **Cérebro:** visão geral, memória, recuperação, aprendizado, arquitetura e atualizações.
-- **Sistemas:** workspaces operacionais, estado, fontes, execução e evidência de cada Sistema.
-- **Skills e Canvas:** capacidades instaladas e o grafo que conecta áreas, Sistemas, fontes,
-  decisões, experimentos e rastros de execução.
-- **Julgamento:** Caixa de Julgamento, Decision Cases, Rotinas e Runs auditáveis.
-- **Estrutura:** Áreas, Fontes e Experimentos que sustentam a operação.
-- **Confiança:** compatibilidade, governança e saúde do Cérebro.
-- **Telegram:** preparação guiada do Hermes, Codex, contexto, allowlist, serviço e diagnóstico.
+- **Hoje:** o que está pronto, o que espera sua decisão e o próximo passo. Números da operação ficam recolhidos.
+- **Cérebro:** o que já sabe, quais informações estão disponíveis e o que ainda falta.
+- **Meus trabalhos:** escolha pelo resultado que quer produzir; cada trabalho mostra seu estado e seus limites.
+- **Entregas:** leia o rascunho da IA, confira as fontes e aprove, peça ajuste ou rejeite quando necessário.
+- **Telegram:** prepare o agente, conecte o bot e confirme sua conta.
+- **Explorar mais:** capacidades, Canvas, estrutura, confiança e histórico técnico para quem precisar investigar.
 - **Society:** catálogo disponível no repositório e convite para
   [inevitasociety.com](https://inevitasociety.com).
+
+Cada tela começa por “para que serve?”, “qual é o estado?” e “o que faço agora?”. Em uma entrega,
+comece pelo resultado; abra **Informações usadas** para conferir fontes e limites; use **Ver como foi
+feito** para recibos, rastros e diagnóstico. Essas informações vêm dos registros reais. Quando um
+registro não existe, a tela diz isso. Abrir telas e detalhes não chama o modelo nem aprova ações.
 
 Essa é a camada portátil do Console que a INEVITA usa na própria operação. Não são distribuídos a
 sessão KOSMOS, o Supabase, o proxy, credenciais ou controles administrativos hospedados. No Cérebro
