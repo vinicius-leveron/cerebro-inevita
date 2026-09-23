@@ -30,9 +30,11 @@ Base inspecionada em 23/09/2026: `cerebro-inevita` (`e5a7cb2`) e `segundo-cerebr
 
 Abrir [`prototype.html`](prototype.html) e percorrer: começar → Hoje → Sistema → entrega → evidências → falha → Telegram. Alternar para “Equipe INEVITA” para ver a camada operacional no mesmo idioma visual. Os dados do protótipo são sintéticos e identificados como exemplo.
 
+**Revisão estrutural:** a inspeção seguinte mostrou que a organização por Sistema, run e drawer ainda exige que a pessoa reconstrua uma mesma tarefa em várias telas. O diagnóstico, as decisões de substituição de telas, o contrato de estados e a ordem de implantação estão em [redesenho estrutural](2026-09-23-structural-redesign.md). O [protótipo V2](prototype-v2.html) permite testar primeiro acesso, trabalho existente, falha parcial, revisão e autorização externa. Ele substitui o protótipo acima como hipótese de jornada; ambos usam apenas dados fictícios.
+
 ## Implementação e pontos a observar
 
-Este corte aplicou a linguagem e a hierarquia nas duas interfaces: Hoje, primeiro acesso, trabalhos, entregas, histórico, fontes, cuidados, menus e abertura de detalhes. O público mantém o percurso guiado do Telegram; a versão interna mantém a prévia e a confirmação das ações hospedadas. Cérebro, Canvas, atualizações, políticas e filas internas ganharam orientação de entrada, mas ainda contêm instrumentos técnicos nas telas de exploração. Eles devem ser observados com participantes antes de decidir se precisam de um segundo nível de simplificação. Nenhum termo foi alterado no contrato ou no registro persistido.
+Este primeiro corte aplicou a linguagem e a hierarquia nas duas interfaces: Hoje, primeiro acesso, trabalhos, entregas, histórico, fontes, cuidados, menus e abertura de detalhes. O público mantém o percurso guiado do Telegram; a versão interna mantém a prévia e a confirmação das ações hospedadas. A revisão estrutural posterior identificou que as telas de trabalho e decisão precisam ser reorganizadas, inclusive nos fluxos, como descrito no documento acima. Nenhum termo foi alterado no contrato ou no registro persistido.
 
 Na avaliação, marque separadamente três falhas: a pessoa não encontra a ação; encontra, mas não sabe o efeito; entende o efeito, mas confunde dado observado, sugestão da IA e decisão humana. Essa distinção guia a próxima revisão de texto e componentes.
 
