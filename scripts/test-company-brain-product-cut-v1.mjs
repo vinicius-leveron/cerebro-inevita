@@ -20,8 +20,8 @@ assert.match(app, /const TOTAL = lowPower \? 36 : 72/, 'ambiente deve respeitar 
 assert.match(app, /Math\.min\(window\.devicePixelRatio \|\| 1, 1\.5\)/, 'Canvas deve limitar densidade de pixels');
 assert.match(app, /visibilitychange/, 'animação deve pausar quando a aba fica oculta');
 
-assert.match(app, /Reproduzir trace/, 'ação deve nomear exatamente o que reproduz');
-assert.match(app, /replay visual indisponível/, 'Run sem eventos deve explicar a limitação');
+assert.match(app, /Rever etapas registradas/, 'ação deve nomear as etapas observadas que reproduz');
+assert.match(app, /não há etapas registradas para rever/, 'trabalho sem eventos deve explicar a limitação');
 assert.match(app, /button\.disabled = replayEvents === 0/, 'disponibilidade deve derivar dos eventos');
 assert.doesNotMatch(app, />▶ Replay</, 'rótulo antigo não pode sobreviver');
 
@@ -37,7 +37,7 @@ assert.match(app, /system-identity/, 'cards devem ter identidade visual própria
 assert.match(app, /mark\.kind !== 'monogram'/, 'identidade publicada deve respeitar o Experience Manifest');
 assert.match(app, /system-identity is-published/, 'marca publicada deve permanecer contida no módulo de identidade');
 assert.doesNotMatch(app, /style="--system-accent:/, 'identidade não pode relaxar a CSP com estilo inline');
-assert.match(app, /Dono operacional/, 'card deve nomear responsabilidade sem fingir publisher');
+assert.match(app, /Ver responsáveis e critérios/, 'responsabilidade deve continuar acessível no detalhe do trabalho');
 assert.match(readModel, /operational_owner: contract\.result\.owner/, 'read model deve expor dono declarado');
 
 for (const selector of [
