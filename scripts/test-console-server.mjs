@@ -294,7 +294,7 @@ try {
 
   const page = await request(base, '/');
   assert.equal(page.status, 200);
-  assert(page.value.includes('Company Brain'));
+  assert(page.value.includes('Cérebro INEVITA'));
   assert(page.value.includes('data-view="compatibility"'));
   const appBundle = await request(base, '/app.js');
   assert.equal(appBundle.status, 200);

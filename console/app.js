@@ -3576,7 +3576,7 @@ async function openJudgment(receiptId) {
   state.selectedRoutine = null;
   state.selectedJudgment = receiptId;
   state.selectedExperiment = null;
-  $('#drawer-content').innerHTML = '<div class="loading"><i></i><span>Abrindo output privado local…</span></div>';
+  $('#drawer-content').innerHTML = '<div class="loading"><i></i><span>Abrindo a entrega…</span></div>';
   $('#drawer').classList.add('open');
   $('#drawer').setAttribute('aria-hidden', 'false');
   try {
@@ -3586,7 +3586,7 @@ async function openJudgment(receiptId) {
       <div class="boundary-note"><b>Leitura local explícita</b>Este conteúdo não entrou no recibo, no read model ou na INEVITA. Abrir não executou modelo.</div>
       <div class="proof-split${detail.context_available ? '' : ' output-only'}">
         <section class="drawer-section proof-result"><div class="output-heading"><h3>Resultado para revisar</h3></div><pre class="private-output">${escapeHtml(detail.output.content)}</pre></section>
-        ${detail.context_available ? `<section class="drawer-section proof-origin"><div class="output-heading"><h3>De onde vieram as informações</h3></div><div id="context-slot"><p class="muted">Conferindo as fontes registradas…</p></div></section>` : '<section class="drawer-section proof-origin"><h3>De onde vieram as informações</h3><p>Este trabalho não registrou as fontes usadas. Revise o resultado com cuidado.</p></section>'}
+        ${detail.context_available ? `<section class="drawer-section proof-origin"><div class="output-heading"><h3>Origens usadas</h3></div><div id="context-slot"><p class="muted">Conferindo as fontes registradas…</p></div></section>` : '<section class="drawer-section proof-origin"><h3>Origens usadas</h3><p>Este trabalho não registrou as fontes usadas. Revise o resultado com cuidado.</p></section>'}
       </div>
       ${correctionSection(detail)}
       <section class="drawer-section"><h3>Seu julgamento</h3><p class="section-help">A nota fica privada. Pedir ajuste, rejeitar ou propor ação exige explicar por quê.</p>${verdictGuide()}<textarea id="judgment-note" maxlength="2000" placeholder="O que está certo, o que precisa mudar ou qual ação deveria ser considerada?"></textarea></section>
